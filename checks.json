@@ -9,15 +9,6 @@
       "occurrences": 4,
       "handlers": ["default"]
   },
-    "check_sidekiq_queue": {
-      "notification": "Check Sidekiq Queue",
-      "command": "PATH=$PATH:/usr/lib/nagios/plugins check_sidekiq_queue -s retry -w 5 -c 10",
-      "subscribers": [ "busin" ],
-      "standalone": true,
-      "interval": 120,
-      "occurrences": 4,
-      "handlers": ["default"]
-  },
      "check_memory": {
       "notification": "Memory Usage",
       "command": "PATH=$PATH:/usr/lib/nagios/plugins pmp-check-unix-memory -c 90 -w 80",
