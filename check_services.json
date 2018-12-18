@@ -1,0 +1,40 @@
+{
+  "checks": {
+    "check_puma": {
+      "notification": "Check Puma Service",
+      "command": "PATH=$PATH:/usr/local/bin/ check-process.rb -p puma",
+      "subscribers": [ "busin" ],
+      "standalone": true,
+      "interval": 120,
+      "occurrences": 4,
+      "handlers": ["default"]
+    },
+    "check_sidekiq": {
+      "notification": "Check Sidekiq Service",
+      "command": "PATH=$PATH:/usr/local/bin/ check-process.rb -p sidekiq",
+      "subscribers": [ "bunsin" ],
+      "standalone": true,
+      "interval": 120,
+      "occurrences": 4,
+      "handlers": ["default"]
+    },
+    "check_CUPS": {
+      "notification": "Check CUPS Service",
+      "command": "PATH=$PATH:/usr/local/bin/ check-process.rb -p cups",
+      "subscribers": [ "bunsin" ],
+      "standalone": true,
+      "interval": 120,
+      "occurrences": 4,
+      "handlers": ["default"]
+    },
+   "check_SymmetricDS": {
+      "notification": "Check SymmetricDS Service",
+      "command": "PATH=$PATH:/usr/local/bin/ check-process.rb -p symmetric",
+      "subscribers": [ "bunsin" ],
+      "standalone": true,
+      "interval": 120,
+      "occurrences": 4,
+      "handlers": ["default"]
+    }
+ }
+}

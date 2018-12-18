@@ -1,0 +1,9 @@
+{
+  "client": {
+       "name": "SXTest1",
+       "environment": "production",
+       "subscriptions": [
+         "Busin"
+	]
+   }
+}

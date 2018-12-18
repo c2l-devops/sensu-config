@@ -1,0 +1,33 @@
+{
+  "checks": {
+    "check_batch_err": {
+      "notification": "Check SymmetricDS Batch Error",
+      "command": "PATH=$PATH:/usr/local/bin/ check-http-json.rb -u http://localhost:31415/api/engine/sx/querynode?query='select count(*) from sym_outgoing_batch where error_flag=1' -K results[0].columnData[0].value --value-less-than 10",
+      "subscribers": [ "busin" ],
+      "standalone": true,
+      "interval": 120,
+      "occurrences": 4,
+      "handlers": ["default"]
+    },
+  "batch_unsent_to_cloud": {
+      "notification": "Check SymmetricD Remaining Batch",
+      "command": "PATH=$PATH:/usr/local/bin/ check-http-json.rb -u http://localhost:31415/api/engine/sx/querynode?query='select count(*) from sym_outgoing_batch where status!=\"OK\"' -K results[0].columnData[0].value --value-less-than 20",
+      "subscribers": [ "busin" ],
+      "standalone": true,
+      "interval": 120,
+      "occurrences": 4,
+      "handlers": ["default"]
+    },
+  "batch_unsent_to_shop": {
+      "notification": "Check SymmetricD Remaining Batch",
+      "command": "PATH=$PATH:/usr/local/bin/ check-http-json.rb -u http://localhost:31415/api/engine/cloud/querynode?query='select count(*) from sym_outgoing_batch where status!=\"OK\"' -K results[0].columnData[0].value --value-less-than 20",
+      "subscribers": [ "busin" ],
+      "standalone": true,
+      "interval": 120,
+      "occurrences": 4,
+      "handlers": ["default"]
+    }
+
+ }
+}
+
