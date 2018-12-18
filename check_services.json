@@ -9,15 +9,6 @@
       "occurrences": 4,
       "handlers": ["default"]
     },
-    "check_sidekiq": {
-      "notification": "Check Sidekiq Service",
-      "command": "PATH=$PATH:/usr/local/bin/ check-process.rb -p sidekiq",
-      "subscribers": [ "bunsin" ],
-      "standalone": true,
-      "interval": 120,
-      "occurrences": 4,
-      "handlers": ["default"]
-    },
     "check_CUPS": {
       "notification": "Check CUPS Service",
       "command": "PATH=$PATH:/usr/local/bin/ check-process.rb -p cups",
