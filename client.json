@@ -1,6 +1,6 @@
 {
   "client": {
-       "name": "SXTest1",
+       "name": "$ClientName",
        "environment": "production",
        "subscriptions": [
          "Busin"
