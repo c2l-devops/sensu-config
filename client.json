@@ -1,6 +1,6 @@
 {
   "client": {
-       "name": "$ClientName",
+       "name": "clientname",
        "environment": "production",
        "subscriptions": [
          "Busin"
